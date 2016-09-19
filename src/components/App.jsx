@@ -8,7 +8,7 @@ export default class Main extends Component {
       <div>
       	<Header />
 
-      	<main>
+      	<main className="container">
       		{this.getContent()}
       	</main>
       </div>
