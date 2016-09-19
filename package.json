@@ -41,7 +41,10 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "history": "^4.2.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^2.8.1",
+    "whatwg-fetch": "^1.0.0"
   }
 }
