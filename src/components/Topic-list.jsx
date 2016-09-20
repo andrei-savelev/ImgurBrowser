@@ -44,7 +44,7 @@ export default class TopicList extends Component {
 	renderTopics() {
 		return this.state.topics.map((topic) => {
 			return (
-				<Link key={topic.id} className="list-group-item">
+				<Link to={`topics/${topic.id}`} key={topic.id} className="list-group-item">
 					<h3 className="list-group-item-heading">{topic.name}</h3>
 					<p className="list-group-item-text">{topic.description}</p>
 				</Link>

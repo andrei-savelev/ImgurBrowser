@@ -1,7 +1,35 @@
 import React, {Component} from 'react';
 import {Router, Link} from 'react-router';
+import TopicStore from '../stores/topic-store';
+import Actions from '../actions';
+import Dropdown from './Dropdown';
 
 export default class Header extends Component {
+	constructor(props) {
+		super(props);
+        this.state = {
+        	topics: []
+        };
+    }
+
+	componentWillMount() {
+		Actions.getTopics();
+	}
+
+	componentDidMount() {
+		this.unsubscribe = TopicStore.listen(this.onChange.bind(this));
+	}
+
+	componentWillUnmount() {
+		this.unsubscribe();
+	}
+
+	onChange(topics) {
+		this.setState({
+			topics: topics
+		});
+	}
+
 	setHeaderBrandName(sBrandName) {
 		var result = "";
 
@@ -22,9 +50,9 @@ export default class Header extends Component {
 						{this.setHeaderBrandName('Imgur Browser')}
 						
 						<ul className="nav navbar-nav navbar-right">
-							<li>
-								<a>Link #1</a>
-							</li>
+							<li className="dropdown">
+					          <Dropdown items={this.state.topics} title="Topics" />
+					        </li>
 						</ul>
 					</div>
 				</nav>
