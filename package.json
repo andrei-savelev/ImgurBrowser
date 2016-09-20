@@ -45,6 +45,7 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.8.1",
+    "reflux": "^0.4.1",
     "whatwg-fetch": "^1.0.0"
   }
 }
