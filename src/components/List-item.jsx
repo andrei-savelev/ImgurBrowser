@@ -6,13 +6,9 @@ export default class ListItem extends Component {
 		super(props);
 	}
 
-	handleClick() {
-		this.props.whenItemClicked(this.props.item.name);
-	}
-
 	render() {
-	    return <li className={this.props.className}>
-	      <Link to={this.props.path}>{this.props.item.name}</Link>
+	    return <li className={this.props.className} onClick={this.props.whenItemClicked}>
+	      <Link activeClassName="active" to={this.props.path}>{this.props.item.name}</Link>
 	    </li>
 	}
 }
