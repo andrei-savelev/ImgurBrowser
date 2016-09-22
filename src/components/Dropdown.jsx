@@ -39,10 +39,9 @@ export default class Dropdown extends Component {
 
 	render() { 
 	    return (
-	    	<div className="dropdown">
+	    	<li className="dropdown">
 		      	<Button
 		        	whenClicked={this.handleClick.bind(this)}
-		        	className="btn-default"
 		        	title={this.props.title}
 		        	subTitleClassName="caret"
 		        />
@@ -50,7 +49,7 @@ export default class Dropdown extends Component {
 		      	<ul className={"dropdown-menu " + (this.state.open ? "show" : "") }>
 		        	{this.createListItem()}
 		      	</ul>
-	    	</div>
+	    	</li>
 	    )
 	}
 }

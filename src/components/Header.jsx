@@ -49,11 +49,11 @@ export default class Header extends Component {
 					<div className="container-fluid">
 						{this.setHeaderBrandName('Imgur Browser')}
 
-						<ul className="nav navbar-nav navbar-right">
-					        <li className="dropdown">
+					    <div className="collapse navbar-collapse">
+					      <ul className="nav navbar-nav navbar-right">
 					          <Dropdown items={this.state.topics} title="Topics"/>
-					        </li>
-					    </ul>
+					      </ul>
+					    </div>
 					</div>
 				</nav>
 			</header>
