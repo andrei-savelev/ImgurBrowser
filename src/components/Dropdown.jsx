@@ -7,48 +7,48 @@ export default class Dropdown extends Component {
 		super(props);
 
 		this.state = {
-			open: false,
-	      	// open: false,
-	      	itemTitle: ''
+			open: false
 		};
 	}
 
-	handleClick() {
-	    this.setState({
+	changeDropdownState() {
+		this.setState({
 	    	open: !this.state.open
 	    });
 	}
 
-	handleItemClick(item) {
-	    this.setState({
-	    	open: !this.state.open,
-	    	
-	    	// open: false,
-	    	itemTitle: item
-	    });
+	handleClick() {
+	    this.changeDropdownState()
 	}
 
-	render() {
-		var list = this.props.items.map((item) => {
+	handleItemClick(item) {
+	    this.changeDropdownState()
+	}
+
+	createListItem() {
+		return this.props.items.slice(0, 4).map((item) => {
 		   	return <ListItem
 		            	item={item}
-		            	path={`topics/${item.id}`}
-		              	className={this.state.itemTitle === item.name ? "active" : "" }
+		            	path={`/topics/${item.id}`}
 		              	key={item.id}
+		              	whenItemClicked={this.handleClick.bind(this)}
 		            />
-		    });
+		});
 
+	}
+
+	render() { 
 	    return (
 	    	<div className="dropdown">
 		      	<Button
 		        	whenClicked={this.handleClick.bind(this)}
 		        	className="btn-default"
-		        	title={this.state.itemTitle || this.props.title}
+		        	title={this.props.title}
 		        	subTitleClassName="caret"
 		        />
 
 		      	<ul className={"dropdown-menu " + (this.state.open ? "show" : "") }>
-		        	{list}
+		        	{this.createListItem()}
 		      	</ul>
 	    	</div>
 	    )
