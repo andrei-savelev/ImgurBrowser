@@ -51,7 +51,7 @@ export default class Header extends Component {
 
 						<ul className="nav navbar-nav navbar-right">
 					        <li className="dropdown">
-					          <Dropdown items={this.state.items} title="Topics"/>
+					          <Dropdown items={this.state.topics} title="Topics"/>
 					        </li>
 					    </ul>
 					</div>
