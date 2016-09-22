@@ -35,16 +35,24 @@ export default class Topic extends Component {
 	createImage() {
 		return this.state.images.map((image) => {
 			if (!image.is_album) {
-				return <img key={image.id} src={image.link} width={image.width} height={image.height} />
+				return (
+					<figure key={image.id} className="image-conteiner__item thumbnail">
+						<img src={image.link} className="default-image" />
+					</figure>
+				)
 			}
 		})
 	}
 
 	render() {
 		return (
-			<div>
-				{this.createImage()}
-			</div>
+			<article>
+				<h1>Image list</h1>
+				
+				<div className="image-container">
+					{this.createImage()}
+				</div>
+			</article>
 		);
 	}
 }
