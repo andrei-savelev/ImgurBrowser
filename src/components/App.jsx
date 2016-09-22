@@ -8,7 +8,7 @@ export default class Main extends Component {
       <div>
       	<Header />
 
-      	<main className="container">
+      	<main className="container" style="padding-top: 70px;">
       		{this.getContent()}
       	</main>
       </div>
