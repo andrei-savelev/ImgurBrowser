@@ -22,12 +22,11 @@ export default class Topic extends Component {
 		this.unsubscribe();
 	}
 
-	compoentWillReciveProps(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		Actions.getImages(nextProps.params.id);
 	}
 
 	onChange(images) {
-		console.log("images are", images);
 		this.setState({
 			images: images
 		});
@@ -36,7 +35,7 @@ export default class Topic extends Component {
 	createImage() {
 		return this.state.images.map((image) => {
 			if (!image.is_album) {
-				return <img src={image.link} width={image.width} heigth={image.height} />
+				return <img key={image.id} src={image.link} width={image.width} height={image.height} />
 			}
 		})
 	}
