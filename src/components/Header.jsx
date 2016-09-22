@@ -45,15 +45,15 @@ export default class Header extends Component {
 	render() {
 		return (
 			<header className="header">
-				<nav className="navbar navbar-default">
+				<nav className="navbar navbar-default navbar-fixed-top">
 					<div className="container-fluid">
 						{this.setHeaderBrandName('Imgur Browser')}
-						
+
 						<ul className="nav navbar-nav navbar-right">
-							<li className="dropdown">
-					          <Dropdown items={this.state.topics} title="Topics" />
+					        <li className="dropdown">
+					          <Dropdown items={this.state.items} title="Topics"/>
 					        </li>
-						</ul>
+					    </ul>
 					</div>
 				</nav>
 			</header>
