@@ -1,7 +1,8 @@
 import Reflux from 'reflux';
 
 let Actions = Reflux.createActions([
-	'getTopics'
+	'getTopics',
+	'getImages'
 ]);
 
 export default Actions;
